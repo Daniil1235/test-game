@@ -1,559 +1,451 @@
-(python) daniil@ubuntu-vmware:~/Документы/PythonProgects/pygame$ buildozer android debug 
-# Check configuration tokens
-# Ensure build layout
-# Check configuration tokens
-# Preparing build
-# Check requirements for android
-# Search for Git (git)
-#  -> found at /usr/bin/git
-# Search for Cython (cython)
-#  -> found at /home/daniil/Документы/PythonProgects/pygame/venv/python/bin/cython
-# Search for Java compiler (javac)
-#  -> found at /usr/lib/jvm/java-11-openjdk-amd64/bin/javac
-# Search for Java keytool (keytool)
-#  -> found at /usr/lib/jvm/java-11-openjdk-amd64/bin/keytool
-# Install platform
-# Run ['git', 'config', '--get', 'remote.origin.url']
-# Cwd /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-https://github.com/kivy/python-for-android.git
-# Run ['git', 'branch', '-vv']
-# Cwd /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-* master e155baf9 [origin/master] Merge pull request #2891 from misl6/release-2023.09.16
-# Run ['/home/daniil/Документы/PythonProgects/pygame/venv/python/bin/python', '-m', 'pip', 'install', '-q', 'appdirs', 'colorama>=0.3.3', 'jinja2', 'sh>=1.10, <2.0; sys_platform!="win32"', 'build', 'toml', 'packaging']
-# Cwd None
+[app]
 
-[notice] A new release of pip is available: 23.3.1 -> 23.3.2
-[notice] To update, run: pip install --upgrade pip
-# Apache ANT found at /home/daniil/.buildozer/android/platform/apache-ant-1.9.4
-# Android SDK found at /home/daniil/.buildozer/android/platform/android-sdk
-# Recommended android's NDK version by p4a is: 25b
-# Android NDK found at /home/daniil/.buildozer/android/platform/android-ndk-r25b
-# Run ['/home/daniil/Документы/PythonProgects/pygame/venv/python/bin/python', '-m', 'pythonforandroid.toolchain', 'aab', '-h', '--color=always', '--storage-dir=/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
-# Cwd /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
-[WARNING]: Please report any issues to the python-for-android issue tracker.
-[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
-[WARNING]: Please report any issues to the python-for-android issue tracker.
-usage: toolchain.py aab [-h] [--debug] [--color {always,never,auto}]
-                        [--sdk-dir SDK_DIR] [--ndk-dir NDK_DIR]
-                        [--android-api ANDROID_API]
-                        [--ndk-version NDK_VERSION] [--ndk-api NDK_API]
-                        [--symlink-bootstrap-files]
-                        [--storage-dir STORAGE_DIR] [--arch ARCH]
-                        [--dist-name DIST_NAME] [--requirements REQUIREMENTS]
-                        [--recipe-blacklist RECIPE_BLACKLIST]
-                        [--blacklist-requirements BLACKLIST_REQUIREMENTS]
-                        [--bootstrap BOOTSTRAP] [--hook HOOK] [--force-build]
-                        [--no-force-build] [--require-perfect-match]
-                        [--no-require-perfect-match] [--allow-replace-dist]
-                        [--no-allow-replace-dist]
-                        [--local-recipes LOCAL_RECIPES]
-                        [--activity-class-name ACTIVITY_CLASS_NAME]
-                        [--service-class-name SERVICE_CLASS_NAME]
-                        [--java-build-tool {auto,ant,gradle}] [--copy-libs]
-                        [--no-copy-libs] [--add-asset ASSETS]
-                        [--add-resource RESOURCES] [--private PRIVATE]
-                        [--use-setup-py] [--ignore-setup-py] [--release]
-                        [--with-debug-symbols] [--keystore KEYSTORE]
-                        [--signkey SIGNKEY] [--keystorepw KEYSTOREPW]
-                        [--signkeypw SIGNKEYPW]
+# (str) Title of your application
+title = pygamegame
 
-options:
-  -h, --help            show this help message and exit
-  --debug               Display debug output and all build info
-  --color {always,never,auto}
-                        Enable or disable color output (default enabled on
-                        tty)
-  --sdk-dir SDK_DIR, --sdk_dir SDK_DIR
-                        The filepath where the Android SDK is installed
-  --ndk-dir NDK_DIR, --ndk_dir NDK_DIR
-                        The filepath where the Android NDK is installed
-  --android-api ANDROID_API, --android_api ANDROID_API
-                        The Android API level to build against defaults to 33
-                        if not specified.
-  --ndk-version NDK_VERSION, --ndk_version NDK_VERSION
-                        DEPRECATED: the NDK version is now found automatically
-                        or not at all.
-  --ndk-api NDK_API     The Android API level to compile against. This should
-                        be your *minimal supported* API, not normally the same
-                        as your --android-api. Defaults to min(ANDROID_API,
-                        21) if not specified.
-  --symlink-bootstrap-files, --ssymlink_bootstrap_files
-                        If True, symlinks the bootstrap files creation. This
-                        is useful for development only, it could also cause
-                        weird problems.
-  --storage-dir STORAGE_DIR
-                        Primary storage directory for downloads and builds
-                        (default: /home/daniil/.local/share/python-for-
-                        android)
-  --arch ARCH           The archs to build for.
-  --dist-name DIST_NAME, --dist_name DIST_NAME
-                        The name of the distribution to use or create
-  --requirements REQUIREMENTS
-                        Dependencies of your app, should be recipe names or
-                        Python modules. NOT NECESSARY if you are using Python
-                        3 with --use-setup-py
-  --recipe-blacklist RECIPE_BLACKLIST
-                        Blacklist an internal recipe from use. Allows
-                        disabling Python 3 core modules to save size
-  --blacklist-requirements BLACKLIST_REQUIREMENTS
-                        Blacklist an internal recipe from use. Allows
-                        disabling Python 3 core modules to save size
-  --bootstrap BOOTSTRAP
-                        The bootstrap to build with. Leave unset to choose
-                        automatically.
-  --hook HOOK           Filename to a module that contains python-for-android
-                        hooks
-  --local-recipes LOCAL_RECIPES, --local_recipes LOCAL_RECIPES
-                        Directory to look for local recipes
-  --activity-class-name ACTIVITY_CLASS_NAME
-                        The full java class name of the main activity
-  --service-class-name SERVICE_CLASS_NAME
-                        Full java package name of the PythonService class
-  --java-build-tool {auto,ant,gradle}
-                        The java build tool to use when packaging the APK,
-                        defaults to automatically selecting an appropriate
-                        tool.
-  --add-asset ASSETS    Put this in the assets folder in the apk.
-  --add-resource RESOURCES
-                        Put this in the res folder in the apk.
-  --private PRIVATE     the directory with the app source code files
-                        (containing your main.py entrypoint)
-  --use-setup-py        Process the setup.py of a project if present.
-                        (Experimental!
-  --ignore-setup-py     Don't run the setup.py of a project if present. This
-                        may be required if the setup.py is not designed to
-                        work inside p4a (e.g. by installing dependencies that
-                        won't work or aren't desired on Android
-  --release             Build your app as a non-debug release build. (Disables
-                        gdb debugging among other things)
-  --with-debug-symbols  Will keep debug symbols from `.so` files.
-  --keystore KEYSTORE   Keystore for JAR signing key, will use jarsigner
-                        default if not specified (release build only)
-  --signkey SIGNKEY     Key alias to sign PARSER_APK. with (release build
-                        only)
-  --keystorepw KEYSTOREPW
-                        Password for keystore
-  --signkeypw SIGNKEYPW
-                        Password for key alias
+# (str) Package name
+package.name = firstpygame
 
-  Whether to force compilation of a new distribution
+# (str) Package domain (needed for android/ios packaging)
+package.domain = com.develooper
 
-  --force-build
-  --no-force-build      (this is the default)
-  --require-perfect-match
-  --no-require-perfect-match
-                        (this is the default)
-  --allow-replace-dist  (this is the default)
-  --no-allow-replace-dist
-  --copy-libs
-  --no-copy-libs        (this is the default)
-# Check application requirements
-# Compile platform
-# Run ['/home/daniil/Документы/PythonProgects/pygame/venv/python/bin/python', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=firstpygame', '--bootstrap=sdl2', '--requirements=python3,pygame,jnius,sdl2,sdl2_image,sdl2_mixer,sdl2_ttf,png,jpeg', '--arch=arm64-v8a', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
-# Cwd /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
-[WARNING]: Please report any issues to the python-for-android issue tracker.
-[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
-[WARNING]: Please report any issues to the python-for-android issue tracker.
-[INFO]:    Will compile for the following archs: armeabi-v7a, arm64-v8a
-[INFO]:    Found Android API target in $ANDROIDAPI: 31
-[INFO]:    Available Android APIs are (20, 30, 31)
-[INFO]:    Requested API target 31 is available, continuing.
-[INFO]:    Found NDK dir in $ANDROIDNDK: /home/daniil/.buildozer/android/platform/android-ndk-r25b
-[INFO]:    Found NDK version 25b
-[INFO]:    Getting NDK API version (i.e. minimum supported API) from user argument
-[INFO]:    ccache is missing, the build will not be optimized in the future.
-[DEBUG]:   All possible dists: []
-[DEBUG]:   Dist matching name and arch: []
-[DEBUG]:   Dist matching ndk_api and recipe: []
-[INFO]:    No existing dists meet the given requirements!
-[DEBUG]:   Remove directory and subdirectory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/firstpygame
-[INFO]:    No dist exists that meets your requirements, so one will be built.
-[INFO]:    Found a single valid recipe set: ['hostpython3', 'jnius', 'jpeg', 'libffi', 'openssl', 'png', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'setuptools', 'pygame', 'six', 'pyjnius', 'android']
-[INFO]:    The selected bootstrap is sdl2
-[INFO]:    # Creating dist with sdl2 bootstrap
-[INFO]:    Dist will have name firstpygame and requirements (python3, pygame, jnius, sdl2, sdl2_image, sdl2_mixer, sdl2_ttf, png, jpeg)
-[INFO]:    Dist contains the following requirements as recipes: ['hostpython3', 'jpeg', 'libffi', 'openssl', 'png', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'setuptools', 'pygame', 'six', 'pyjnius', 'android']
-[INFO]:    Dist will also contain modules (jnius) installed from pip
-[INFO]:    Dist will be build in mode debug
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/dists/firstpygame
-[INFO]:    Recipe build order is ['hostpython3', 'jpeg', 'libffi', 'openssl', 'png', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'setuptools', 'pygame', 'six', 'pyjnius', 'android']
-[INFO]:    The requirements (jnius) were not found as recipes, they will be installed with pip.
-[INFO]:    # Downloading recipes 
-[INFO]:    Downloading hostpython3
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/hostpython3
-[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz
-[DEBUG]:        Python-3.10.10.tgz
-[INFO]:    hostpython3 download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading jpeg
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/jpeg
-[DEBUG]:   -> running basename https://github.com/libjpeg-turbo/libjpeg-turbo/archive/2.0.1.tar.gz
-[DEBUG]:        2.0.1.tar.gz
-[INFO]:    jpeg download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading libffi
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/libffi
-[DEBUG]:   -> running basename https://github.com/libffi/libffi/archive/v3.4.2.tar.gz
-[DEBUG]:        v3.4.2.tar.gz
-[INFO]:    libffi download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading openssl
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/openssl
-[DEBUG]:   -> running basename https://www.openssl.org/source/openssl-1.1.1m.tar.gz
-[DEBUG]:        openssl-1.1.1m.tar.gz
-[INFO]:    openssl download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading png
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/png
-[DEBUG]:   -> running basename https://github.com/glennrp/libpng/archive/v1.6.37.zip
-[DEBUG]:        v1.6.37.zip
-[INFO]:    png download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading sdl2_image
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2_image
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_image/releases/download/release-2.6.2/SDL2_image-2.6.2.tar.gz
-[DEBUG]:        SDL2_image-2.6.2.tar.gz
-[INFO]:    sdl2_image download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading sdl2_mixer
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2_mixer
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2/SDL2_mixer-2.6.2.tar.gz
-[DEBUG]:        SDL2_mixer-2.6.2.tar.gz
-[INFO]:    sdl2_mixer download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading sdl2_ttf
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2_ttf
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.1/SDL2_ttf-2.20.1.tar.gz
-[DEBUG]:        SDL2_ttf-2.20.1.tar.gz
-[INFO]:    sdl2_ttf download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading sqlite3
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sqlite3
-[DEBUG]:   -> running basename https://www.sqlite.org/2021/sqlite-amalgamation-3350500.zip
-[DEBUG]:        sqlite-amalgamation-3350500.zip
-[INFO]:    sqlite3 download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading python3
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/python3
-[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz
-[DEBUG]:        Python-3.10.10.tgz
-[INFO]:    python3 download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading sdl2
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/sdl2
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL/releases/download/release-2.26.1/SDL2-2.26.1.tar.gz
-[DEBUG]:        SDL2-2.26.1.tar.gz
-[INFO]:    sdl2 download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading setuptools
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/setuptools
-[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/setuptools/setuptools-51.3.3.tar.gz
-[DEBUG]:        setuptools-51.3.3.tar.gz
-[INFO]:    setuptools download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading pygame
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/pygame
-[DEBUG]:   -> running basename https://github.com/pygame/pygame/archive/2.1.0.tar.gz
-[DEBUG]:        2.1.0.tar.gz
-[INFO]:    pygame download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading six
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/six
-[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/six/six-1.15.0.tar.gz
-[DEBUG]:        six-1.15.0.tar.gz
-[INFO]:    six download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading pyjnius
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/packages/pyjnius
-[DEBUG]:   -> running basename https://github.com/kivy/pyjnius/archive/1.5.0.zip
-[DEBUG]:        1.5.0.zip
-[INFO]:    pyjnius download already cached, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Downloading android
-[INFO]:    Skipping android download as no URL is set
-[INFO]:    # Building all recipes for arch armeabi-v7a
-[INFO]:    # Unpacking recipes
-[INFO]:    Unpacking hostpython3 for armeabi-v7a
-[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz
-[DEBUG]:        Python-3.10.10.tgz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/hostpython3/desktop
-[INFO]:    hostpython3 is already unpacked, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/jpeg/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking jpeg for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/libjpeg-turbo/libjpeg-turbo/archive/2.0.1.tar.gz
-[DEBUG]:        2.0.1.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/jpeg/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving libjpeg-turbo-2.0.1 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/jpeg/armeabi-v7a__ndk_target_21/jpeg
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking libffi for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/libffi/libffi/archive/v3.4.2.tar.gz
-[DEBUG]:        v3.4.2.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving libffi-3.4.2 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking openssl for armeabi-v7a
-[DEBUG]:   -> running basename https://www.openssl.org/source/openssl-1.1.1m.tar.gz
-[DEBUG]:        openssl-1.1.1m.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving openssl-1.1.1m to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_21/openssl1.1
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/png/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking png for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/glennrp/libpng/archive/v1.6.37.zip
-[DEBUG]:        v1.6.37.zip
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/png/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving libpng-1.6.37 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/png/armeabi-v7a__ndk_target_21/png
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Unpacking sdl2_image for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_image/releases/download/release-2.6.2/SDL2_image-2.6.2.tar.gz
-[DEBUG]:        SDL2_image-2.6.2.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni
-[INFO]:    sdl2_image is already unpacked, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Unpacking sdl2_mixer for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.2/SDL2_mixer-2.6.2.tar.gz
-[DEBUG]:        SDL2_mixer-2.6.2.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni
-[INFO]:    sdl2_mixer is already unpacked, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Unpacking sdl2_ttf for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.1/SDL2_ttf-2.20.1.tar.gz
-[DEBUG]:        SDL2_ttf-2.20.1.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni
-[INFO]:    sdl2_ttf is already unpacked, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking sqlite3 for armeabi-v7a
-[DEBUG]:   -> running basename https://www.sqlite.org/2021/sqlite-amalgamation-3350500.zip
-[DEBUG]:        sqlite-amalgamation-3350500.zip
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving sqlite-amalgamation-3350500 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_21/sqlite3
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/python3/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking python3 for armeabi-v7a
-[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz
-[DEBUG]:        Python-3.10.10.tgz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/python3/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving Python-3.10.10 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/python3/armeabi-v7a__ndk_target_21/python3
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[INFO]:    Unpacking sdl2 for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL/releases/download/release-2.26.1/SDL2-2.26.1.tar.gz
-[DEBUG]:        SDL2-2.26.1.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni
-[INFO]:    sdl2 is already unpacked, skipping
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/setuptools/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking setuptools for armeabi-v7a
-[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/setuptools/setuptools-51.3.3.tar.gz
-[DEBUG]:        setuptools-51.3.3.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/setuptools/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving setuptools-51.3.3 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/setuptools/armeabi-v7a__ndk_target_21/setuptools
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pygame/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking pygame for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/pygame/pygame/archive/2.1.0.tar.gz
-[DEBUG]:        2.1.0.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pygame/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving pygame-2.1.0 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pygame/armeabi-v7a__ndk_target_21/pygame
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/six/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking six for armeabi-v7a
-[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/six/six-1.15.0.tar.gz
-[DEBUG]:        six-1.15.0.tar.gz
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/six/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving six-1.15.0 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/six/armeabi-v7a__ndk_target_21/six
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pyjnius-sdl2/armeabi-v7a__ndk_target_21
-[INFO]:    Unpacking pyjnius for armeabi-v7a
-[DEBUG]:   -> running basename https://github.com/kivy/pyjnius/archive/1.5.0.zip
-[DEBUG]:        1.5.0.zip
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pyjnius-sdl2/armeabi-v7a__ndk_target_21
-[DEBUG]:   Moving pyjnius-1.5.0 to /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/pyjnius-sdl2/armeabi-v7a__ndk_target_21/pyjnius
-[INFO]:    <- directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android
-[DEBUG]:   Create directory /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/android-sdl2/armeabi-v7a__ndk_target_21
-[DEBUG]:   -> running cp -a /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/recipes/android/src /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/android-sdl2/armeabi-v7a__ndk_target_21/android
-[INFO]:    # Prebuilding recipes
-[INFO]:    Prebuilding hostpython3 for armeabi-v7a
-[INFO]:    hostpython3 has no prebuild_armeabi_v7a, skipping
-[INFO]:    Applying patches for hostpython3[armeabi-v7a]
-[INFO]:    hostpython3 already patched, skipping
-[INFO]:    Prebuilding jpeg for armeabi-v7a
-[INFO]:    jpeg has no prebuild_armeabi_v7a, skipping
-[INFO]:    Prebuilding libffi for armeabi-v7a
-[INFO]:    libffi has no prebuild_armeabi_v7a, skipping
-[INFO]:    Applying patches for libffi[armeabi-v7a]
-[INFO]:    Applying patch remove-version-info.patch
-[DEBUG]:   -> running patch -t -d /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_21/libffi -p1 -i /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/recipes/libffi/remove-version-info.patch
-[DEBUG]:        patching file Makefile.am
-[DEBUG]:        Hunk #1 succeeded at 138 with fuzz 2 (offset -18 lines).
-[INFO]:    Prebuilding openssl for armeabi-v7a
-[INFO]:    openssl has no prebuild_armeabi_v7a, skipping
-[INFO]:    Prebuilding png for armeabi-v7a
-[INFO]:    png has no prebuild_armeabi_v7a, skipping
-[INFO]:    Prebuilding sdl2_image for armeabi-v7a
-[INFO]:    -> directory context /home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_image/external
-[DEBUG]:   -> running download.sh
-[DEBUG]:        fatal: целевой путь «external/jpeg» уже существует и не является пустым каталогом.
-Exception in thread background thread for pid 4058:
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
-    self.run()
-  File "/usr/lib/python3.10/threading.py", line 953, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 1641, in wrap
-    fn(*rgs, **kwargs)
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 2569, in background_thread
-    handle_exit_code(exit_code)
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 2269, in fn
-    return self.command.handle_command_exit_code(exit_code)
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 869, in handle_command_exit_code
-    raise exc
-sh.ErrorReturnCode_128: 
+# (str) Source code where the main.py live
+source.dir = .
 
-  RAN: '/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_image/external/download.sh'
+# (list) Source files to include (let empty to include all the files)
+source.include_exts = py,png,jpg,kv,atlas,ttf,mp3
 
-  STDOUT:
-fatal: целевой путь «external/jpeg» уже существует и не является пустым каталогом.
+# (list) List of inclusions using pattern matching
+#source.include_patterns = assets/*,images/*.png
+
+# (list) Source files to exclude (let empty to not exclude anything)
+#source.exclude_exts = spec
+
+# (list) List of directory to exclude (let empty to not exclude anything)
+#source.exclude_dirs = tests, bin, venv
+
+# (list) List of exclusions using pattern matching
+# Do not prefix with './'
+#source.exclude_patterns = license,images/*/*.jpg
+
+# (str) Application versioning (method 1)
+version = 0.1
+
+# (str) Application versioning (method 2)
+# version.regex = __version__ = ['"](.*)['"]
+# version.filename = %(source.dir)s/main.py
+
+# (list) Application requirements
+# comma separated e.g. requirements = sqlite3,kivy
+requirements = python3,pygame,jnius,sdl2,sdl2_image,sdl2_mixer,sdl2_ttf,png,jpeg
+
+# (str) Custom source folders for requirements
+# Sets custom source for any requirements with recipes
+# requirements.source.kivy = ../../kivy
+
+# (str) Presplash of the application
+#presplash.filename = %(source.dir)s/data/presplash.png
+
+# (str) Icon of the application
+#icon.filename = %(source.dir)s/data/icon.png
+
+# (list) Supported orientations
+# Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
+orientation = landscape
+
+# (list) List of service to declare
+#services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
+
+#
+# OSX Specific
+#
+
+#
+# author = © Copyright Info
+
+# change the major version of python used by the app
+osx.python_version = 3
+
+# Kivy version to use
+osx.kivy_version = 1.9.1
+
+#
+# Android specific
+#
+
+# (bool) Indicate if the application should be fullscreen or not
+fullscreen = 1
+
+# (string) Presplash background color (for android toolchain)
+# Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
+# red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
+# darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
+# olive, purple, silver, teal.
+#android.presplash_color = #FFFFFF
+
+# (string) Presplash animation using Lottie format.
+# see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
+# for general documentation.
+# Lottie files can be created using various tools, like Adobe After Effect or Synfig.
+#android.presplash_lottie = "path/to/lottie/file.json"
+
+# (str) Adaptive icon of the application (used if Android API level is 26+ at runtime)
+#icon.adaptive_foreground.filename = %(source.dir)s/data/icon_fg.png
+#icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
+
+# (list) Permissions
+# (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
+#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
+
+# (list) features (adds uses-feature -tags to manifest)
+#android.features = android.hardware.usb.host
+
+# (int) Target Android API, should be as high as possible.
+android.api = 31
+# (int) Minimum API your APK / AAB will support.
+#android.minapi = 21
+
+# (int) Android SDK version to use
+#android.sdk = 20
+
+# (str) Android NDK version to use
+android.ndk = 25b
+
+# (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
+#android.ndk_api = 21
+
+# (bool) Use --private data storage (True) or --dir public storage (False)
+#android.private_storage = True
+
+# (str) Android NDK directory (if empty, it will be automatically downloaded.)
+#android.ndk_path =
+
+# (str) Android SDK directory (if empty, it will be automatically downloaded.)
+#android.sdk_path =
+
+# (str) ANT directory (if empty, it will be automatically downloaded.)
+#android.ant_path =
+
+# (bool) If True, then skip trying to update the Android sdk
+# This can be useful to avoid excess Internet downloads or save time
+# when an update is due and you just want to test/build your package
+# android.skip_update = False
+
+# (bool) If True, then automatically accept SDK license
+# agreements. This is intended for automation only. If set to False,
+# the default, you will be shown the license when first running
+# buildozer.
+# android.accept_sdk_license = False
+
+# (str) Android entry point, default is ok for Kivy-based app
+#android.entrypoint = org.kivy.android.PythonActivity
+
+# (str) Full name including package path of the Java class that implements Android Activity
+# use that parameter together with android.entrypoint to set custom Java class instead of PythonActivity
+#android.activity_class_name = org.kivy.android.PythonActivity
+
+# (str) Extra xml to write directly inside the <manifest> element of AndroidManifest.xml
+# use that parameter to provide a filename from where to load your custom XML code
+#android.extra_manifest_xml = ./src/android/extra_manifest.xml
+
+# (str) Extra xml to write directly inside the <manifest><application> tag of AndroidManifest.xml
+# use that parameter to provide a filename from where to load your custom XML arguments:
+#android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
+
+# (str) Full name including package path of the Java class that implements Python Service
+# use that parameter to set custom Java class which extends PythonService
+#android.service_class_name = org.kivy.android.PythonService
+
+# (str) Android app theme, default is ok for Kivy-based app
+# android.apptheme = "@android:style/Theme.NoTitleBar"
+
+# (list) Pattern to whitelist for the whole project
+#android.whitelist =
+
+# (str) Path to a custom whitelist file
+#android.whitelist_src =
+
+# (str) Path to a custom blacklist file
+#android.blacklist_src =
+
+# (list) List of Java .jar files to add to the libs so that pyjnius can access
+# their classes. Don't add jars that you do not need, since extra jars can slow
+# down the build process. Allows wildcards matching, for example:
+# OUYA-ODK/libs/*.jar
+#android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
+
+# (list) List of Java files to add to the android project (can be java or a
+# directory containing the files)
+#android.add_src =
+
+# (list) Android AAR archives to add
+#android.add_aars =
+
+# (list) Put these files or directories in the apk assets directory.
+# Either form may be used, and assets need not be in 'source.include_exts'.
+# 1) android.add_assets = source_asset_relative_path
+# 2) android.add_assets = source_asset_path:destination_asset_relative_path
+#android.add_assets =
+
+# (list) Put these files or directories in the apk res directory.
+# The option may be used in three ways, the value may contain one or zero ':'
+# Some examples:
+# 1) A file to add to resources, legal resource names contain ['a-z','0-9','_']
+# android.add_resources = my_icons/all-inclusive.png:drawable/all_inclusive.png
+# 2) A directory, here  'legal_icons' must contain resources of one kind
+# android.add_resources = legal_icons:drawable
+# 3) A directory, here 'legal_resources' must contain one or more directories, 
+# each of a resource kind:  drawable, xml, etc...
+# android.add_resources = legal_resources
+#android.add_resources =
+
+# (list) Gradle dependencies to add
+#android.gradle_dependencies =
+
+# (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
+# contains an 'androidx' package, or any package from Kotlin source.
+# android.enable_androidx requires android.api >= 28
+#android.enable_androidx = True
+
+# (list) add java compile options
+# this can for example be necessary when importing certain java libraries using the 'android.gradle_dependencies' option
+# see https://developer.android.com/studio/write/java8-support for further information
+# android.add_compile_options = "sourceCompatibility = 1.8", "targetCompatibility = 1.8"
+
+# (list) Gradle repositories to add {can be necessary for some android.gradle_dependencies}
+# please enclose in double quotes 
+# e.g. android.gradle_repositories = "maven { url 'https://kotlin.bintray.com/ktor' }"
+#android.add_gradle_repositories =
+
+# (list) packaging options to add 
+# see https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.PackagingOptions.html
+# can be necessary to solve conflicts in gradle_dependencies
+# please enclose in double quotes 
+# e.g. android.add_packaging_options = "exclude 'META-INF/common.kotlin_module'", "exclude 'META-INF/*.kotlin_module'"
+#android.add_packaging_options =
+
+# (list) Java classes to add as activities to the manifest.
+#android.add_activities = com.example.ExampleActivity
+
+# (str) OUYA Console category. Should be one of GAME or APP
+# If you leave this blank, OUYA support will not be enabled
+#android.ouya.category = GAME
+
+# (str) Filename of OUYA Console icon. It must be a 732x412 png image.
+#android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
+
+# (str) XML file to include as an intent filters in <activity> tag
+#android.manifest.intent_filters =
+
+# (list) Copy these files to src/main/res/xml/ (used for example with intent-filters)
+#android.res_xml = PATH_TO_FILE,
+
+# (str) launchMode to set for the main activity
+#android.manifest.launch_mode = standard
+
+# (str) screenOrientation to set for the main activity.
+# Valid values can be found at https://developer.android.com/guide/topics/manifest/activity-element
+#android.manifest.orientation = fullSensor
+
+# (list) Android additional libraries to copy into libs/armeabi
+#android.add_libs_armeabi = libs/android/*.so
+#android.add_libs_armeabi_v7a = libs/android-v7/*.so
+#android.add_libs_arm64_v8a = libs/android-v8/*.so
+#android.add_libs_x86 = libs/android-x86/*.so
+#android.add_libs_mips = libs/android-mips/*.so
+
+# (bool) Indicate whether the screen should stay on
+# Don't forget to add the WAKE_LOCK permission if you set this to True
+#android.wakelock = False
+
+# (list) Android application meta-data to set (key=value format)
+#android.meta_data =
+
+# (list) Android library project to add (will be added in the
+# project.properties automatically.)
+#android.library_references =
+
+# (list) Android shared libraries which will be added to AndroidManifest.xml using <uses-library> tag
+#android.uses_library =
+
+# (str) Android logcat filters to use
+#android.logcat_filters = *:S python:D
+
+# (bool) Android logcat only display log for activity's pid
+#android.logcat_pid_only = False
+
+# (str) Android additional adb arguments
+#android.adb_args = -H host.docker.internal
+
+# (bool) Copy library instead of making a libpymodules.so
+#android.copy_libs = 1
+
+# (list) The Android archs to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
+# In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
+android.archs = arm64-v8a, armeabi-v7a
+
+# (int) overrides automatic versionCode computation (used in build.gradle)
+# this is not the same as app version and should only be edited if you know what you're doing
+# android.numeric_version = 1
+
+# (bool) enables Android auto backup feature (Android API >=23)
+android.allow_backup = True
+
+# (str) XML file for custom backup rules (see official auto backup documentation)
+# android.backup_rules =
+
+# (str) If you need to insert variables into your AndroidManifest.xml file,
+# you can do so with the manifestPlaceholders property.
+# This property takes a map of key-value pairs. (via a string)
+# Usage example : android.manifest_placeholders = [myCustomUrl:\"org.kivy.customurl\"]
+# android.manifest_placeholders = [:]
+
+# (bool) Skip byte compile for .py files
+# android.no-byte-compile-python = False
+
+# (str) The format used to package the app for release mode (aab or apk or aar).
+# android.release_artifact = aab
+
+# (str) The format used to package the app for debug mode (apk or aar).
+# android.debug_artifact = apk
+
+#
+# Python for android (p4a) specific
+#
+
+# (str) python-for-android URL to use for checkout
+#p4a.url =
+
+# (str) python-for-android fork to use in case if p4a.url is not specified, defaults to upstream (kivy)
+#p4a.fork = kivy
+
+# (str) python-for-android branch to use, defaults to master
+#p4a.branch = master
+
+# (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
+#p4a.commit = HEAD
+
+# (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
+#p4a.source_dir =
+
+# (str) The directory in which python-for-android should look for your own build recipes (if any)
+#p4a.local_recipes =
+
+# (str) Filename to the hook for p4a
+#p4a.hook =
+
+# (str) Bootstrap to use for android builds
+# p4a.bootstrap = sdl2
+
+# (int) port number to specify an explicit --port= p4a argument (eg for bootstrap flask)
+#p4a.port =
+
+# Control passing the --use-setup-py vs --ignore-setup-py to p4a
+# "in the future" --use-setup-py is going to be the default behaviour in p4a, right now it is not
+# Setting this to false will pass --ignore-setup-py, true will pass --use-setup-py
+# NOTE: this is general setuptools integration, having pyproject.toml is enough, no need to generate
+# setup.py if you're using Poetry, but you need to add "toml" to source.include_exts.
+#p4a.setup_py = false
+
+# (str) extra command line arguments to pass when invoking pythonforandroid.toolchain
+#p4a.extra_args =
 
 
-  STDERR:
 
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1262, in <module>
-    main()
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/entrypoints.py", line 18, in main
-    ToolchainCL()
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 680, in __init__
-    getattr(self, command)(args)
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 99, in wrapper_func
-    build_dist_from_args(ctx, dist, args)
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 158, in build_dist_from_args
-    build_recipes(build_order, python_modules, ctx,
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/build.py", line 496, in build_recipes
-    recipe.prebuild_arch(arch)
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/recipes/sdl2_image/__init__.py", line 21, in prebuild_arch
-    shprint(sh.Command("./download.sh"))
-  File "/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/python-for-android/pythonforandroid/logger.py", line 167, in shprint
-    for line in output:
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 915, in next
-    self.wait()
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 845, in wait
-    self.handle_command_exit_code(exit_code)
-  File "/home/daniil/Документы/PythonProgects/pygame/venv/python/lib/python3.10/site-packages/sh.py", line 869, in handle_command_exit_code
-    raise exc
-sh.ErrorReturnCode_128: 
+#
+# iOS specific
+#
 
-  RAN: '/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a/build/bootstrap_builds/sdl2/jni/SDL2_image/external/download.sh'
+# (str) Path to a custom kivy-ios folder
+#ios.kivy_ios_dir = ../kivy-ios
+# Alternately, specify the URL and branch of a git checkout:
+ios.kivy_ios_url = https://github.com/kivy/kivy-ios
+ios.kivy_ios_branch = master
 
-  STDOUT:
-fatal: целевой путь «external/jpeg» уже существует и не является пустым каталогом.
+# Another platform dependency: ios-deploy
+# Uncomment to use a custom checkout
+#ios.ios_deploy_dir = ../ios_deploy
+# Or specify URL and branch
+ios.ios_deploy_url = https://github.com/phonegap/ios-deploy
+ios.ios_deploy_branch = 1.10.0
+
+# (bool) Whether or not to sign the code
+ios.codesign.allowed = false
+
+# (str) Name of the certificate to use for signing the debug version
+# Get a list of available identities: buildozer ios list_identities
+#ios.codesign.debug = "iPhone Developer: <lastname> <firstname> (<hexstring>)"
+
+# (str) The development team to use for signing the debug version
+#ios.codesign.development_team.debug = <hexstring>
+
+# (str) Name of the certificate to use for signing the release version
+#ios.codesign.release = %(ios.codesign.debug)s
+
+# (str) The development team to use for signing the release version
+#ios.codesign.development_team.release = <hexstring>
+
+# (str) URL pointing to .ipa file to be installed
+# This option should be defined along with `display_image_url` and `full_size_image_url` options.
+#ios.manifest.app_url =
+
+# (str) URL pointing to an icon (57x57px) to be displayed during download
+# This option should be defined along with `app_url` and `full_size_image_url` options.
+#ios.manifest.display_image_url =
+
+# (str) URL pointing to a large icon (512x512px) to be used by iTunes
+# This option should be defined along with `app_url` and `display_image_url` options.
+#ios.manifest.full_size_image_url =
 
 
-  STDERR:
+[buildozer]
 
-# Command failed: ['/home/daniil/Документы/PythonProgects/pygame/venv/python/bin/python', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=firstpygame', '--bootstrap=sdl2', '--requirements=python3,pygame,jnius,sdl2,sdl2_image,sdl2_mixer,sdl2_ttf,png,jpeg', '--arch=arm64-v8a', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/daniil/Документы/PythonProgects/pygame/.buildozer/android/platform/build-arm64-v8a_armeabi-v7a', '--ndk-api=21', '--ignore-setup-py', '--debug']
-# ENVIRONMENT:
-#     SHELL = '/bin/bash'
-#     SESSION_MANAGER = 'local/ubuntu-vmware:@/tmp/.ICE-unix/1209,unix/ubuntu-vmware:/tmp/.ICE-unix/1209'
-#     QT_ACCESSIBILITY = '1'
-#     SNAP_REVISION = '364'
-#     XDG_CONFIG_DIRS = '/etc/xdg/xdg-ubuntu:/etc/xdg'
-#     SSH_AGENT_LAUNCHER = 'gnome-keyring'
-#     XDG_MENU_PREFIX = 'gnome-'
-#     GNOME_DESKTOP_SESSION_ID = 'this-is-deprecated'
-#     SNAP_REAL_HOME = '/home/daniil'
-#     TERMINAL_EMULATOR = 'JetBrains-JediTerm'
-#     SNAP_USER_COMMON = '/home/daniil/snap/pycharm-professional/common'
-#     LC_ADDRESS = 'be_BY.UTF-8'
-#     GNOME_SHELL_SESSION_MODE = 'ubuntu'
-#     LC_NAME = 'be_BY.UTF-8'
-#     SSH_AUTH_SOCK = '/run/user/1000/keyring/ssh'
-#     TERM_SESSION_ID = 'a8e61bf2-9717-4fed-b829-9a67166fc787'
-#     SNAP_INSTANCE_KEY = ''
-#     XMODIFIERS = '@im=ibus'
-#     DESKTOP_SESSION = 'ubuntu'
-#     LC_MONETARY = 'be_BY.UTF-8'
-#     BAMF_DESKTOP_FILE_HINT = '/var/lib/snapd/desktop/applications/pycharm-professional_pycharm-professional.desktop'
-#     GTK_MODULES = 'gail:atk-bridge'
-#     SNAP_EUID = '1000'
-#     PWD = '/home/daniil/Документы/PythonProgects/pygame'
-#     XDG_SESSION_DESKTOP = 'ubuntu'
-#     LOGNAME = 'daniil'
-#     XDG_SESSION_TYPE = 'wayland'
-#     SYSTEMD_EXEC_PID = '1230'
-#     XAUTHORITY = '/run/user/1000/.mutter-Xwaylandauth.J4NMH2'
-#     DESKTOP_STARTUP_ID = 'gnome-shell/PyCharm Professional Edition/1230-0-ubuntu-vmware_TIME44849'
-#     SNAP_CONTEXT = 'sCgl5_UzkCodqHtmSoxBVv9ZPahGmvJs7jlpyhvgZ2aAAKd3nudv'
-#     GJS_DEBUG_TOPICS = 'JS ERROR;JS LOG'
-#     HOME = '/home/daniil'
-#     USERNAME = 'daniil'
-#     IM_CONFIG_PHASE = '1'
-#     LANG = 'ru_RU.UTF-8'
-#     LC_PAPER = 'be_BY.UTF-8'
-#     LS_COLORS = 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
-#     XDG_CURRENT_DESKTOP = 'ubuntu:GNOME'
-#     VIRTUAL_ENV = '/home/daniil/Документы/PythonProgects/pygame/venv/python'
-#     WAYLAND_DISPLAY = 'wayland-0'
-#     SNAP_ARCH = 'amd64'
-#     SNAP_INSTANCE_NAME = 'pycharm-professional'
-#     SNAP_USER_DATA = '/home/daniil/snap/pycharm-professional/364'
-#     INVOCATION_ID = 'f75b4b1bc7054812b27013d57d52e245'
-#     MANAGERPID = '1011'
-#     SNAP_REEXEC = ''
-#     SNAP_UID = '1000'
-#     GJS_DEBUG_OUTPUT = 'stderr'
-#     GNOME_SETUP_DISPLAY = ':1'
-#     LESSCLOSE = '/usr/bin/lesspipe %s %s'
-#     XDG_SESSION_CLASS = 'user'
-#     TERM = 'xterm-256color'
-#     LC_IDENTIFICATION = 'be_BY.UTF-8'
-#     LESSOPEN = '| /usr/bin/lesspipe %s'
-#     USER = 'daniil'
-#     SNAP = '/snap/pycharm-professional/364'
-#     SNAP_COMMON = '/var/snap/pycharm-professional/common'
-#     SNAP_VERSION = '2023.3.2'
-#     DISPLAY = ':0'
-#     SHLVL = '1'
-#     SNAP_LIBRARY_PATH = '/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void'
-#     SNAP_COOKIE = 'sCgl5_UzkCodqHtmSoxBVv9ZPahGmvJs7jlpyhvgZ2aAAKd3nudv'
-#     LC_TELEPHONE = 'be_BY.UTF-8'
-#     QT_IM_MODULE = 'ibus'
-#     LC_MEASUREMENT = 'be_BY.UTF-8'
-#     VIRTUAL_ENV_PROMPT = 'python'
-#     SNAP_DATA = '/var/snap/pycharm-professional/364'
-#     XDG_RUNTIME_DIR = '/run/user/1000'
-#     PS1 = ('(python) \\[\\e]0;\\u@\\h: '
- '\\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ ')
-#     LC_TIME = 'be_BY.UTF-8'
-#     SNAP_NAME = 'pycharm-professional'
-#     JOURNAL_STREAM = '8:35518'
-#     XDG_DATA_DIRS = '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
-#     PATH = '/home/daniil/.buildozer/android/platform/apache-ant-1.9.4/bin:/home/daniil/Документы/PythonProgects/pygame/venv/python/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
-#     GDMSESSION = 'ubuntu'
-#     DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
-#     GIO_LAUNCHED_DESKTOP_FILE_PID = '1990'
-#     GIO_LAUNCHED_DESKTOP_FILE = '/var/lib/snapd/desktop/applications/pycharm-professional_pycharm-professional.desktop'
-#     LC_NUMERIC = 'be_BY.UTF-8'
-#     _ = '/home/daniil/Документы/PythonProgects/pygame/venv/python/bin/buildozer'
-#     PACKAGES_PATH = '/home/daniil/.buildozer/android/packages'
-#     ANDROIDSDK = '/home/daniil/.buildozer/android/platform/android-sdk'
-#     ANDROIDNDK = '/home/daniil/.buildozer/android/platform/android-ndk-r25b'
-#     ANDROIDAPI = '31'
-#     ANDROIDMINAPI = '21'
-# 
-# Buildozer failed to execute the last command
-# The error might be hidden in the log above this error
-# Please read the full log, and search for it before
-# raising an issue with buildozer itself.
-# In case of a bug report, please add a full log with log_level = 2
+# (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
+log_level = 2
+
+# (int) Display warning if buildozer is run as root (0 = False, 1 = True)
+warn_on_root = 1
+
+# (str) Path to build artifact storage, absolute or relative to spec file
+# build_dir = ./.buildozer
+
+# (str) Path to build output (i.e. .apk, .aab, .ipa) storage
+# bin_dir = ./bin
+
+#    -----------------------------------------------------------------------------
+#    List as sections
+#
+#    You can define all the "list" as [section:key].
+#    Each line will be considered as a option to the list.
+#    Let's take [app] / source.exclude_patterns.
+#    Instead of doing:
+#
+#[app]
+#source.exclude_patterns = license,data/audio/*.wav,data/images/original/*
+#
+#    This can be translated into:
+#
+#[app:source.exclude_patterns]
+#license
+#data/audio/*.wav
+#data/images/original/*
+#
+
+
+#    -----------------------------------------------------------------------------
+#    Profiles
+#
+#    You can extend section / key with a profile
+#    For example, you want to deploy a demo version of your application without
+#    HD content. You could first change the title to add "(demo)" in the name
+#    and extend the excluded directories to remove the HD content.
+#
+#[app@demo]
+#title = My Application (demo)
+#
+#[app:source.exclude_patterns@demo]
+#images/hd/*
+#
+#    Then, invoke the command line with the "demo" profile:
+#
+#buildozer --profile demo android debug
